@@ -1,0 +1,33 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb"],
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "globals": {
+    "it": true,
+    "expect": true,
+    "localStorage": true,
+    "fetch": true,
+    "Headers": true
+  },
+  "rules": {
+    "comma-dangle": 0,
+    "react/jsx-filename-extension": 0,
+    "jsx-a11y/anchor-is-valid": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+          "config": "webpack.config.js"
+      }
+    }
+  },
+  "plugins": [
+    "class-property"
+  ]
+}

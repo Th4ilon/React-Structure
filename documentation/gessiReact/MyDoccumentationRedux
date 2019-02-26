@@ -1,0 +1,203 @@
+///Here we have few examples of redux plus a video with a really good implementation un a React.js project.
+---------https://www.youtube.com/watch?v=nrg7zhgJd4w&t=170s---------.
+---------https://redux.js.org/ Official web documentation ----------.
+
+
+
+
+//redux
+import { createStore, applyMiddleware } from "redux";
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
+//helper for the asyc call
+import promise from "redux-promise-middleware";
+//axios
+import  axios  from "axios";
+
+//--------------------------------------------------------------------------------------------------//
+//reducer have th logic of the app. passing the initial state
+//1** Create areducer. make sure dont mutated any values.
+/*const reducer = (state = Myobj, action) =>{
+        console.log('action type : ' ,action.type);
+        console.log('action doing : ', state);    
+    // state = to the actual state obj and we add the new field. Creating a new state so it can save states
+    state = {...state, testText : action.doing}
+    return state;
+}
+const Myobj = {
+    id : 1,
+    testText : 'testing'
+}
+ 
+//recive the reducer and dev tool
+//2*** create Store
+const store = createStore(reducer,
+    //For the dev tool.
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
+
+
+store.subscribe(()=>{
+    console.log("store change", store.getState())
+})
+// call the store, the action have to have a type action or is not going to work
+
+// fire the action
+store.dispatch({type : 'INC', doing : 2})
+store.dispatch({type : 'INC', doing : 'back to testing'})
+store.dispatch({type : 'INC', doing : 'nothing'})*/
+//--------------------------------------------------------------------------------------------------//
+//MidelWare.
+//Sate with initial state
+//actions.
+//make sure dont mutated any values.
+/*const reducer = (initialState = 0, action) =>{
+    if (action.type ==='INC') {
+        return initialState + action.payload
+    }
+    else if (action.type ==='DEC') {
+        return  initialState - action.payload
+    }
+    else if (action.type === 'E') {
+        throw new Error("Err ocurred");
+        
+    }
+}
+//
+const logger = (store)=>(next)=>(action)=>{
+    console.log('action fired : ', action );
+    //next set every action affter is fierd, otherwise the middleware just kills it
+    next(action);
+}
+
+
+const Err = (store)=>(next)=>(action)=>{
+    try {
+        next(action);
+    }catch(e){
+        console.log('Err has ocurred : ', e)
+    }
+}
+
+const myMiddleWare = applyMiddleware(logger, Err);
+const devTool = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+// Recive reducer, dev tool(webBrowser tool), and the middlerware
+const store = createStore(reducer, devTool, myMiddleWare)
+
+store.dispatch({type : 'INC', payload : 1});
+store.dispatch({type : 'INC', payload : 1});
+store.dispatch({type : 'INC', payload : 1});
+store.dispatch({type : 'DEC', payload : 3});
+store.dispatch({type : 'E'});*/
+//--------------------------------------------------------------------------------------------------//
+//ASYC REDUX
+/*const initialState = {
+    fetching : false,
+    fetch : false,
+    facturas : [],
+    err: null
+}
+//make sure dont mutated any values.
+const reducer  = (state = initialState, action)=> {
+    switch (action.type){
+        case 'FETCH_FACTURA_PENDING' : {
+            return {...state, fetching : true}
+        }
+        case 'FETCH_FACTURA_FULFILLED':{
+            return {...state, fetch: true, factura : action.payload.data.content}
+        }
+        case 'ERR':{
+            return {...state, err : action.payload.data.content}
+        }
+    }
+    return state;
+}
+//url of the server function(POST, Query body)
+const url = "http://192.168.11.126:8080/gesii/factura/expedidas" 
+//init the middleware
+const myMiddleware = applyMiddleware(promise(),thunk,logger);
+
+// conf for the redux dev tool on chrome
+const devTool = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+
+//Connection confg
+const connectionConfg = {
+    payload : axios({ 
+        method: 'POST',
+        url: url, 
+        headers: { //header conf of the axios
+              'Access-Control-Allow-Origin': '*',
+              'Access-Control-Allow-Credentials': true,
+              'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'}, 
+        params: { //Use fot query string on the url
+            entidad: 'A93139053',
+            ejercicio : '2017',
+            pdte:'0',
+            size : '10'   } 
+          })
+}
+//init of the sotore
+const store = createStore(reducer, devTool, myMiddleware);
+
+
+//Dispatch the store so the activation can occurr
+store.dispatch((dispatch)=>{
+    dispatch({
+        type : 'FETCH_FACTURA',
+        payload : connectionConfg.payload
+    })
+    //WithOut redux-promise-middleWare. ES6 is required to handle the promise
+    /*axios({ 
+        method: 'POST',
+        url: 'http://192.168.11.126:8080/gesii/factura/expedidas', 
+        headers: { //header conf of the axios
+              'Access-Control-Allow-Origin': '*',
+              'Access-Control-Allow-Credentials': true,
+              'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'}, 
+        params: { //Use fot query string on the url
+            entidad: 'A93139053',
+            ejercicio : '2017',
+            pdte:'0',
+            size : '10'   } 
+          })
+    .then((response)=>{
+        dispatch({type: 'RECIVE_DATA', payload : response.data.content})
+    }).catch((Err)=>{
+        dispatch({type: 'ERR'})
+    })*/
+//})
+
+/-----------------------------------------------HTML-----------------------------------------------------
+ <form onSubmit={this._getData}>
+        <div className = 'top-selects'>
+            <Label htmlFor = {topSlects.aplicacion} />
+              <Select id = {topSlects.aplicacion} type = 'text' title='mainForm' val='Todas'/>
+
+            <Label htmlFor = {topSlects.Ejercicio}/>
+              <Select id = {topSlects.Ejercicio} type = 'text' title='mainForm' val='2018'/>
+        
+            <Label htmlFor = {topSlects.Periodo} />
+              <Select id = {topSlects.Periodo} type = 'text' title='mainForm' val='Todas'/>
+        
+            <Label htmlFor = {topSlects.Fecha} />
+              <Select id = {topSlects.Fecha} type = 'text' title='mainForm' val='Todas'/>      
+        </div>
+          <br/> 
+        
+        <div className = 'imputs'>
+            <Label htmlFor = {bottonInputs.numeroFac}/>
+              <Input id = {bottonInputs.numeroFac} type = 'text'/>
+            <Label htmlFor = {bottonInputs.codErr}/>
+              <Input id ={bottonInputs.codErr} type = 'text'/>
+        </div>
+        <div className = 'Submit'>
+          <div className = 'formCheck'>
+          <Label htmlFor = 'Pendientes de enviar' />
+            <Input id = 'Pendientes de enviar' type ='checkbox' />
+          </div>
+        </div>
+        <div className = 'submint'>
+          <br/>
+          <input type="submit" value="Buscar" />
+        </div>
+      </form>

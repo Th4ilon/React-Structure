@@ -1,0 +1,22 @@
+look at it : https://github.com/postcss/postcss.
+documentation : https://github.com/css-modules/css-modules
+
+
+///Redux to my proyect. 
+https://www.youtube.com/watch?v=nrg7zhgJd4w&t=170s
+
+//Implemente the frist example for the redux-Form
+https://redux-form.com/7.2.3/examples/simple/
+
+
+
+
+//TODO 19/02/2018
+
+implement redux to my proyec.(folders, etc...)
+implement redux-form and use the sample of the documentation to start with.
+
+
+
+
+

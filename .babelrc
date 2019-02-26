@@ -1,0 +1,52 @@
+{
+  "presets": [
+    ["@babel/preset-es2015", { "useBuildIns": true }],
+    ["@babel/preset-env", {
+      "targets": {
+        "esmodules": true,
+        "browsers": ["last 2 versions",
+					"Safari >= 10",
+					"iOS >= 10",
+					"not ie <= 10"]
+      },
+      "modules": false,
+      "useBuiltIns": "entry",
+      "debug": true
+    }],
+    "@babel/preset-react",
+    // "@babel/preset-stage-0"
+  ],
+  "plugins": [
+    [
+      "transform-class-properties",
+      { "spec": true }
+    ],
+    [
+      "@babel/plugin-transform-runtime", {
+        "polyfill": true,
+        "regenerator": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-object-rest-spread", {
+        "loose": false,
+        "useBuiltIns": true
+      }
+    ],
+    /*"transform-object-rest-spread",*/
+    ["@babel/plugin-transform-async-to-generator", {
+      "module": "bluebird",
+      "method": "coroutine"
+    }],
+    "@babel/plugin-transform-spread",
+    "react-css-modules",
+    "recharts",
+
+
+    // "add-module-exports",
+		"@babel/plugin-syntax-jsx",
+		// "transform-export-extensions",
+		"@babel/plugin-transform-react-display-name",
+		"@babel/plugin-transform-react-jsx"
+  ]
+}

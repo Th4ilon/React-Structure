@@ -1,0 +1,319 @@
+html,
+button,
+input,
+select,
+textarea,
+body {
+    font-family: 'Varela Round';
+    background-color: #f0f0f0;
+    color: #1A1F43;
+}
+
+a {
+    color: #5773B8;
+}
+a:hover {
+    color: #1A1F43;
+}
+
+.bg-login {
+    background-color: #5773B8;
+    background-image: url(../img/bg-login.jpg);
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-login .card {
+    background-color: transparent;
+    border: none;
+}
+.bg-login .text-muted {
+    padding-bottom: 1rem;
+    color: #FFFFFF !important;
+    text-transform: uppercase;
+    border-bottom: 1px dashed #FFFFFF;
+}
+.bg-login .card .input-group {
+    border-bottom: 4px solid #303A80;
+}
+.bg-login .card .input-group .input-group-text {
+    opacity: .8;
+}
+.bg-login .card .input-group input {
+    /* text-transform: uppercase; */
+    opacity: .65;
+}
+.bg-login .card .btn-primary {
+    text-transform: uppercase;
+    width: 100%;
+    border: none !important;
+    background-color: #303A80;
+}
+.bg-login .card .btn-primary:hover {
+    background-color: #1A1F43;
+}
+.bg-login .card .btn-link {
+    color: #FFFFFF;
+}
+
+.text-muted {
+    color: #93949F !important;
+}
+
+.bg-primary,
+.bg-success,
+.bg-info,
+.bg-warning,
+.bg-danger,
+.bg-dark,
+.bg-inverse {
+    color: #FFFFFF;
+}
+
+.help-block {
+    color: #f86C6B;
+}
+
+.app-header.navbar,
+.app-header.navbar .navbar-brand,
+.brand-minimized .app-header.navbar .navbar-brand,
+.breadcrumb {
+    border-bottom: 1px solid #DDDDDD;
+}
+
+    /* OPCION MENU SIN ICONOS
+        .sidebar ul.nav li a > i {
+            display: none !important;
+        }
+    */
+
+.sidebar {
+    background: #5773B8;
+}
+.sidebar-minimized .sidebar .nav > .nav-dropdown > .nav-dropdown-items {
+    background: #465C93;
+}
+.sidebar .nav-dropdown.open {
+    background: rgba(0, 0, 0, 0.25);
+}
+.sidebar .nav-dropdown.open .nav-dropdown-toggle {
+    background: rgba(0, 0, 0, 0.75);
+}
+.sidebar .nav-link.active {
+    background: rgba(255, 0, 0, .6);
+}
+.sidebar .nav-link.active:hover {
+    background: rgba(255, 0, 0, .75);
+}
+.sidebar .nav-link:hover {
+    background: #1A1F43;
+}
+.sidebar .nav-link i,
+.sidebar .nav-link.active i{
+    color: #FFFFFF;
+}
+.sidebar-minimized .sidebar .nav-item:hover > .nav-link, .sidebar-minimized .sidebar .navbar .nav-item:hover > .dropdown-toggle, .navbar .sidebar-minimized .sidebar .nav-item:hover > .dropdown-toggle {
+    background: #101623;
+}
+.sidebar .nav-link::before,
+.sidebar .sidebar-minimizer::before {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath fill='%23fff' d='M9.148 2.352l-4.148 4.148 4.148 4.148q0.148 0.148 0.148 0.352t-0.148 0.352l-1.297 1.297q-0.148 0.148-0.352 0.148t-0.352-0.148l-5.797-5.797q-0.148-0.148-0.148-0.352t0.148-0.352l5.797-5.797q0.148-0.148 0.352-0.148t0.352 0.148l1.297 1.297q0.148 0.148 0.148 0.352t-0.148 0.352z'/%3E%3C/svg%3E"); }
+/**/
+.sidebar ul li ul li.open a.nav-dropdown-toggle,
+.sidebar ul li ul li ul li {
+    border-bottom: 1px dotted #455068;
+}
+.sidebar ul li ul li.open ul li a.nav-dropdown-toggle,
+.sidebar ul li ul li:last-child,
+.sidebar ul li ul li ul li:last-child {
+    border-bottom: none !important;
+}
+.sidebar ul li ul li ul li > a {
+    padding: 0.5rem 0 0.35rem 3rem !important;
+    line-height: normal;
+    font-size: 0.75rem;
+}
+.sidebar ul li ul li ul li ul li > a {
+    padding: 0.5rem 0 0.35rem 3.75rem !important;
+    line-height: normal;
+    font-size: 0.75rem;
+}
+.sidebar ul li ul li .nav-dropdown-toggle {
+    background: rgba(0, 0, 0, 0) !important;
+}
+.sidebar ul li ul li .nav-dropdown-toggle:hover,
+.sidebar ul li ul li.open .nav-dropdown-toggle:hover {
+    background: #1A1F43 !important;
+}
+.sidebar ul li ul li.open .nav-dropdown-toggle {
+    background: rgba(0, 0, 0, 0) !important;
+}
+.sidebar ul li ul li ul li.open .nav-dropdown-toggle {
+    background: rgba(0, 0, 0, 0.25) !important;
+}
+
+
+.app-header.navbar .navbar-brand {
+    padding: 0;
+}
+.brand-minimized .app-header.navbar .navbar-brand {
+    background-size: 35px;
+}
+
+.breadcrumb-item.active {
+    color: #CCCCCC;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    color: #151b1e;
+}
+
+.page-item.active .page-link, .pagination-datatables li.active .page-link, .pagination li.active .page-link, .page-item.active .pagination-datatables li a, .pagination-datatables li .page-item.active a, .pagination-datatables li.active a, .page-item.active .pagination li a, .pagination li .page-item.active a, .pagination li.active a {
+    background-color: #5773B8;
+    border-color: #5773B8;
+}
+.page-link, .pagination-datatables li a, .pagination li a {
+    color: #5773B8;
+}
+.page-link:hover, .pagination-datatables li a:hover, .pagination li a:hover {
+    color: #1A1F43;
+    background-color: #f0f0f0;
+}
+
+.table thead th {
+    text-transform: uppercase;
+    border-bottom: 2px solid #DDDDDD;
+}
+.table th, .table td {
+    border-top: 1px solid #DDDDDD;
+}
+.table-striped tbody tr:nth-of-type(2n+1) {
+    background-color: rgba(0, 0, 0, 0.025);
+}
+.table a i.icons {
+    font-weight: bold;
+}
+.table a:hover {
+    text-decoration: none;
+}
+
+.card {
+    border: none;
+}
+.card-header {
+    padding: 0 1.25rem .75rem 0;
+    margin-bottom: 0;
+    background-color: #f0f0f0;
+    border-bottom: none;
+    font-size: 150%;
+    font-weight: bold;
+}
+.card-header > i {
+    margin-right: 0.15rem;
+}
+.card-table .card-body,
+.card-table .card-block {
+    overflow-x: scroll;
+}
+.card-footer {
+    padding: 1rem 1.25rem 1.5rem 1.25rem;
+    background-color: #FFFFFF;
+    border-top: 1px solid #DDDDDD;
+}
+
+.card-header .card-actions a,
+.card-header .card-actions button {
+    width: 35px;
+    padding: 0;
+    color: #151b1e;
+    text-align: right;
+    border-left: 1px solid #DDDDDD;
+}
+
+#accordion {
+    border-top: 1px solid #DDDDDD;
+}
+#accordion .card {
+    margin: 0;
+    border-bottom: 1px solid #DDDDDD;
+}
+#accordion .card a {
+    display: block;
+}
+#accordion .card a:hover {
+    text-decoration: underline;
+}
+#accordion .card-header {
+    background-color: transparent;
+}
+#accordion .card-body,
+#accordion .card-block {
+    padding: 1rem;
+}
+#accordion .card-body,
+#accordion .card-block {
+    padding: 1rem;
+}
+#accordion .card-header {
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.app-footer {
+    background: #FFFFFF;
+    border-top: 1px solid #DDDDDD;
+}
+.app-footer .logotipo {
+    display: inline-block;
+    width: 30px;
+    height: 15px;
+    padding: 0;
+    margin-left: 0.5rem;
+    background-image: url("../img/logo-footer.png");
+    background-repeat: no-repeat;
+    background-position: 0px 3px;
+    background-size: 30px auto;
+}
+
+/**/
+@media (max-width: 767px) {
+    h1, .h1 {
+        font-size: 1.6rem;
+    }
+    h2, .h2 {
+        font-size: 1.5rem;
+    }
+    h3, .h3 {
+        font-size: 1.4rem;
+    }
+    h4, .h4 {
+        font-size: 1.3rem;
+    }
+
+    button {
+        margin-bottom: 5px;
+    }
+
+    .main .container-fluid {
+        padding: 0 15px;
+    }
+    .bg-login .logotipo {
+        max-width: 70%;
+    }
+
+    .card .min-hght {
+        min-height: auto;
+    }
+}
+@media (min-width: 768px) {
+    .bg-login .logotipo {
+        max-width: 65%;
+    }
+
+    .card .min-hght {
+        min-height: 220px;
+    }
+}
+@media (min-width: 992px) {
+    .bg-login .logotipo {
+        max-width: 75%;
+    }
+}
